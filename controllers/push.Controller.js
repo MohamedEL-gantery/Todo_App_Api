@@ -40,14 +40,24 @@ export const saveToken = async (req, res) => {
   try {
     const { token, platform } = req.body;
     const userId = req.user._id;
+
     if (!token || !Expo.isExpoPushToken(token)) {
-      return res.status(400).json({ message: "Invalid Expo push token" });
+      return res.status(400).json({
+        message: "Invalid Expo push token",
+      });
     }
 
     await PushToken.findOneAndUpdate(
       { token },
-      { token, platform, user: userId },
-      { upsert: true, new: true },
+      {
+        token,
+        platform,
+        user: userId,
+      },
+      {
+        upsert: true,
+        returnDocument: "after",
+      },
     );
 
     res.status(201).json({ message: "Token saved" });
