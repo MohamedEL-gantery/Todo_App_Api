@@ -14,6 +14,7 @@ async function sendMessages(tokens, { title, body, data }) {
       sound: "default",
       priority: "high",
       channelId: "default",
+      ttl: 86400,
     }));
 
   const chunks = expo.chunkPushNotifications(messages);
