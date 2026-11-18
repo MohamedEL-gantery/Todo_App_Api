@@ -9,7 +9,13 @@
     "start:dev": "nodemon app.js",
     "dev": "nodemon app.js"
   },
-  "keywords": ["mern", "express", "mongodb", "jwt", "todo"],
+  "keywords": [
+    "mern",
+    "express",
+    "mongodb",
+    "jwt",
+    "todo"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,6 +23,7 @@
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
+    "expo-server-sdk": "^8.0.0",
     "express": "^5.2.1",
     "express-async-handler": "^1.2.0",
     "joi": "^18.2.3",
